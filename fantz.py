@@ -24,8 +24,8 @@ def fantz(binary_number: str, decimal_number: int):
             continue
         binary_number = result_number
         replaces_counter += replaces_amount
-        if binary_number == '':
+        if len(binary_number) == 0:
             break
-    if binary_number != '':
+    if len(binary_number) != 0:
         return -1
     return replaces_counter
