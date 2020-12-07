@@ -18,4 +18,4 @@
   **To run my code:**  
 • Download/clone this repository  
 • Use command in folder which contains main.py: ```python3 main.py``` (could be "py" or "python" depending on your python version)  
-• To launch doctests using console type: ```python3 -m managers.fantz``` (in the same folder as step before) 
+• To launch doctests using console type: ```python3 -m unittest test_fantz.py``` (in the same folder as step before) 
