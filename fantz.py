@@ -13,7 +13,7 @@ def fill_list_of_powers(decimal_number: int, binary_number_length: int):
 
 def fantz(binary_number: str, decimal_number: int):
     binary_number = binary_number.lstrip('0')
-    if len(binary_number) == 0:
+    if not binary_number:
         return -1
     replaces_counter = 0
     powers = fill_list_of_powers(decimal_number, len(binary_number))
@@ -24,8 +24,8 @@ def fantz(binary_number: str, decimal_number: int):
             continue
         binary_number = result_number
         replaces_counter += replaces_amount
-        if len(binary_number) == 0:
+        if not binary_number:
             break
-    if len(binary_number) != 0:
+    if binary_number:
         return -1
     return replaces_counter
