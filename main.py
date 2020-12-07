@@ -1,4 +1,4 @@
-from managers.fantz import fantz
+from fantz import fantz
 
 if __name__ == '__main__':
     binary_numbers = ['101101101', '1111101', '110011011',
