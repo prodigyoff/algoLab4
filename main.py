@@ -1,4 +1,4 @@
-from fantz import fantz
+from fantz import *
 
 if __name__ == '__main__':
     binary_numbers = ['101101101', '1111101', '110011011',
@@ -6,4 +6,4 @@ if __name__ == '__main__':
     decimal_number = 5
     for i in range(len(binary_numbers)):
         print(f'Binary number: {binary_numbers[i]}  Decimal number: {decimal_number} \n'
-              f'Replacements amount:  {fantz(binary_numbers[i], decimal_number)}')
+              f'Replacements amount:  {fantz_launcher(binary_numbers[i], decimal_number)}')
