@@ -34,7 +34,7 @@ def fantz(binary_number: str, decimal_number: int) -> int:
         if power in binary_number:
             if (secondary_replaces_counter := binary_number.count(power)) \
                     and any_power_in_remainder(powers, rest := binary_number.replace(power, '_')) \
-                    and (len(rest) < 2 or last_element_check(binary_number.replace('_', ''), rest.replace('_', ''))):
+                    and (len(rest) < 2 or last_element_check(binary_number, rest.replace('_', ''))):
                 binary_number = rest
                 replaces_counter += secondary_replaces_counter
 
