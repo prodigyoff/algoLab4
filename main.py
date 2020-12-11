@@ -1,5 +1,8 @@
 from fantz import *
 
+INPUT_FILE_LOCATION = 'data/fantz.in'
+OUTPUT_FILE_LOCATION = 'data/fantz.out'
+
 if __name__ == '__main__':
     binary_numbers = ['101101101', '1111101', '110011011',
                       '101110011']
