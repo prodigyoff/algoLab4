@@ -9,11 +9,20 @@ def fill_list_of_powers(decimal_number: int, binary_number_length: int) -> list:
 
 
 def any_power_in_remainder(powers: list, binary_number: str) -> bool:
-    if not binary_number:
+    if binary_number.replace('_', '') == '':
         return True
     for power in powers:
         if power in binary_number and len(power) <= len(binary_number):
             return True
+    return False
+
+
+def last_element_check(binary_number: str, rest: str) -> bool:
+    if not rest:
+        return True
+    replaced_binary_number = binary_number.replace('_', '')
+    if replaced_binary_number[-1] == rest[-1]:
+        return True
     return False
 
 
@@ -25,11 +34,13 @@ def fantz(binary_number: str, decimal_number: int) -> int:
             continue
         if power in binary_number:
             if (secondary_replaces_counter := binary_number.count(power)) \
-                    and any_power_in_remainder(powers, rest := binary_number.replace(power, '')) \
-                    and (len(rest) < 2 or rest[-1] == binary_number[-1]):
+                    and any_power_in_remainder(powers, rest := binary_number.replace(power, '_')) \
+                    and (len(rest) < 2 or last_element_check(binary_number, rest.replace('_', ''))):
                 binary_number = rest
                 replaces_counter += secondary_replaces_counter
-    if replaces_counter == 0:
+
+    binary_number = binary_number.replace('_', '')
+    if replaces_counter == 0 or binary_number:
         return -1
     return replaces_counter
 
