@@ -2,7 +2,8 @@ def fill_list_of_powers(decimal_number: int, binary_number_length: int) -> list:
     powers_list = ['1']
     for i in range(binary_number_length):
         if len(powers_list[i]) > binary_number_length:
-            break
+            powers_list.reverse()
+            return powers_list[1:]
         powers_list.append(bin(decimal_number ** (i + 1))[2:])
     powers_list.reverse()
     return powers_list[1:]
