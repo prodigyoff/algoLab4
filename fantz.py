@@ -20,8 +20,7 @@ def any_power_in_remainder(powers: list, binary_number: str) -> bool:
 def last_element_check(binary_number: str, rest: str) -> bool:
     if not rest:
         return True
-    replaced_binary_number = binary_number.replace('_', '')
-    if replaced_binary_number[-1] == rest[-1]:
+    if binary_number[-1] == rest[-1]:
         return True
     return False
 
@@ -35,7 +34,7 @@ def fantz(binary_number: str, decimal_number: int) -> int:
         if power in binary_number:
             if (secondary_replaces_counter := binary_number.count(power)) \
                     and any_power_in_remainder(powers, rest := binary_number.replace(power, '_')) \
-                    and (len(rest) < 2 or last_element_check(binary_number, rest.replace('_', ''))):
+                    and (len(rest) < 2 or last_element_check(binary_number.replace('_', ''), rest.replace('_', ''))):
                 binary_number = rest
                 replaces_counter += secondary_replaces_counter
 
