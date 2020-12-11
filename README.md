@@ -13,8 +13,14 @@
 
 **Обмеження:**  
 	0 < len(X) < 100  
-	0 < N < 100 
-  
+	0 < N < 100  
+	
+**Algorithm description**  
+1. Filling list with powers of given decimal number and reversing it, so the biggest power will go first  
+2. Taking powers one by one from our list, comparing them to our binary number, if it fits: counting how many times we can replace them. Memorizing binary number after replacement and comparing last numbers of binary number after replacement and before (because last number of odd binary powers will always be 1) so we can't take wrong power.  
+3. After all the comparisons replacing binary number with memorized binary number after replacement and memorizing sum of replaces before step 2 and replaces made in step 2.  
+4. Repeating step 2 untill we are finished and checking if binary number or replaces count exists before returning our replaces count as a result.  
+
   **To run my code:**  
 • Download/clone this repository  
 • Use command in folder which contains main.py: ```python3 main.py``` (could be "py" or "python" depending on your python version)  
