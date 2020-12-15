@@ -19,7 +19,7 @@ class TestFantz(unittest.TestCase):
 
     def testFantzEdgeCases(self):
         self.assertEqual(5, fantz_launcher('101111101', 5))
-        self.assertEqual(-1, fantz_launcher('11111100', 2))
+        self.assertEqual(6, fantz_launcher('111110100', 2))
         self.assertEqual(-1, fantz_launcher('10101', 5))
         self.assertEqual(-1, fantz_launcher('10110011', 5))
 

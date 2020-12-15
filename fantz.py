@@ -21,7 +21,7 @@ def any_power_in_remainder(powers: list, binary_number: str) -> bool:
 def last_element_check(binary_number: str, rest: str) -> bool:
     if not rest:
         return True
-    if binary_number[-1] == rest[-1]:
+    if binary_number[-1] == rest[-1] or rest.count('1') == len(rest):
         return True
     return False
 
